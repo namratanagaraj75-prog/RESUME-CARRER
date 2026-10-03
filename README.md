@@ -51,15 +51,19 @@ To use OpenAI, set `OPENAI_API_KEY` in the backend process environment before st
 
 The backend also reads a root `.env` file for local development. Start from `.env.example`, keep the real `.env` private, and never put an OpenAI key in a `VITE_*` variable.
 
-## Deployment notes
+## Deployment (Render + Vercel)
 
-Vercel can host the React/Vite frontend, but this project also needs its Python FastAPI backend. The backend runs the resume extraction, scikit-learn analysis, LangGraph workflow, LLM adapter, and PDF report generation; it is not served by Vercel's static frontend deployment. Deploy the frontend to Vercel and run the backend as a separate Python service or container with the project data files available and a writable reports directory.
+The FastAPI backend and React frontend are separate deployments. The backend serves the analysis API and needs the repository's `data/` files; Vercel hosts only the frontend. The root `render.yaml` configures the Render web service.
 
-For Vercel, set the project root directory to `frontend` and configure the build environment variable `VITE_API_BASE_URL` to the backend's public URL ending in `/api` (for example, `https://your-backend.example.com/api`). This URL is public configuration, not a secret. Set `CORS_ALLOW_ORIGINS` on the backend to the exact Vercel site origin. Set `OPENAI_API_KEY` only in the backend host's secret environment if OpenAI responses are wanted; local rule-based guidance works without it.
+1. Push this repository to GitHub.
+2. In Render, create a **Blueprint** from the GitHub repository and deploy the `resume-career-api` service from `render.yaml`. Wait for the deploy to finish, then copy the service URL (for example, `https://resume-career-api.onrender.com`). Check that `<service-url>/api/health` returns a healthy response.
+3. In Vercel, import the same GitHub repository and set **Root Directory** to `frontend`. Set the environment variable `VITE_API_BASE_URL` to the Render URL ending in `/api` (for example, `https://resume-career-api.onrender.com/api`), then deploy. The Vercel configuration supports client-side route fallback.
+4. Copy the deployed Vercel origin (for example, `https://your-project.vercel.app`) into the Render service's `CORS_ALLOW_ORIGINS` environment variable. Enter only the origin, with no trailing slash; add any custom frontend domain as another comma-separated origin. Save and redeploy/restart the Render service.
+5. Optionally set `OPENAI_API_KEY` in Render's environment variables to enable OpenAI-generated guidance. Without it the local rule-based guidance continues to work.
 
-Run a production backend from the repository root with the host's port, for example `uvicorn backend.app:app --host 0.0.0.0 --port $PORT`. Vite's `/api` proxy is for local development and is not a production proxy. Reports are written to `reports/generated/`, so the backend host must provide writable storage; use persistent storage if generated reports must survive restarts or run across multiple backend instances.
+`VITE_API_BASE_URL` is public frontend configuration, not a secret. Keep API keys only in Render's secret environment variables, never in Vercel `VITE_*` variables or committed files.
 
-The equivalent settings are documented in the root and frontend `.env.example` files. Do not commit real `.env` files or credentials.
+Render's free service may sleep when idle, so the first request after a quiet period can take longer. Generated reports are written to `reports/generated/`; on hosts without persistent disks they may be lost when the service restarts. Configure persistent storage if generated reports need to survive restarts. Vite's `/api` proxy is for local development only and is not used by the production deployment.
 
 ## Try the workflow
 
