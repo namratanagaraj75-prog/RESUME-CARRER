@@ -1,0 +1,342 @@
+{
+  "roles": [
+    {
+      "id": "ml_engineer",
+      "title": "Machine Learning Engineer",
+      "category": "Data & AI",
+      "description": "Designs, builds, and deploys scalable machine learning pipelines, predictive models, and production AI systems.",
+      "required_skills": [
+        "Python",
+        "Machine Learning",
+        "scikit-learn",
+        "Pandas",
+        "NumPy",
+        "TensorFlow",
+        "PyTorch",
+        "Docker",
+        "Git",
+        "REST API"
+      ],
+      "preferred_skills": [
+        "Deep Learning",
+        "Natural Language Processing",
+        "CI/CD",
+        "FastAPI",
+        "AWS",
+        "Kubernetes",
+        "MLOps",
+        "Feature Engineering",
+        "SQL"
+      ],
+      "experience_levels": [
+        "Entry",
+        "Mid-Level",
+        "Senior"
+      ],
+      "learning_priority_order": [
+        "Python",
+        "NumPy",
+        "Pandas",
+        "scikit-learn",
+        "Machine Learning",
+        "PyTorch",
+        "Docker",
+        "FastAPI",
+        "MLOps"
+      ]
+    },
+    {
+      "id": "data_scientist",
+      "title": "Data Scientist",
+      "category": "Data & AI",
+      "description": "Extracts actionable insights from complex datasets using statistical modeling, hypothesis testing, machine learning, and storytelling.",
+      "required_skills": [
+        "Python",
+        "SQL",
+        "Pandas",
+        "NumPy",
+        "scikit-learn",
+        "Machine Learning",
+        "Data Mining",
+        "Data Pipelines",
+        "Analytical Skills"
+      ],
+      "preferred_skills": [
+        "R",
+        "Tableau",
+        "Power BI",
+        "Deep Learning",
+        "Natural Language Processing",
+        "BigQuery",
+        "Apache Spark",
+        "Feature Engineering",
+        "Communication"
+      ],
+      "experience_levels": [
+        "Entry",
+        "Mid-Level",
+        "Senior"
+      ],
+      "learning_priority_order": [
+        "Python",
+        "SQL",
+        "Pandas",
+        "scikit-learn",
+        "Machine Learning",
+        "Feature Engineering",
+        "Data Pipelines",
+        "Tableau"
+      ]
+    },
+    {
+      "id": "ai_engineer",
+      "title": "AI Engineer",
+      "category": "Data & AI",
+      "description": "Specializes in building Generative AI applications, RAG pipelines, fine-tuning LLMs, and multi-agent systems.",
+      "required_skills": [
+        "Python",
+        "LLM",
+        "Large Language Models",
+        "LangChain",
+        "LangGraph",
+        "RAG",
+        "PyTorch",
+        "Vector Databases",
+        "FastAPI",
+        "REST API"
+      ],
+      "preferred_skills": [
+        "Hugging Face",
+        "Transformers",
+        "ChromaDB",
+        "FAISS",
+        "Docker",
+        "Prompt Engineering",
+        "Machine Learning",
+        "Natural Language Processing",
+        "AWS"
+      ],
+      "experience_levels": [
+        "Mid-Level",
+        "Senior",
+        "Lead"
+      ],
+      "learning_priority_order": [
+        "Python",
+        "LLM",
+        "Prompt Engineering",
+        "LangChain",
+        "LangGraph",
+        "RAG",
+        "Vector Databases",
+        "FastAPI",
+        "Docker"
+      ]
+    },
+    {
+      "id": "data_analyst",
+      "title": "Data Analyst",
+      "category": "Data & AI",
+      "description": "Gathers, cleans, transforms, and visualizes structured data to help organizations make data-informed operational decisions.",
+      "required_skills": [
+        "SQL",
+        "Excel",
+        "Python",
+        "Pandas",
+        "Tableau",
+        "Power BI",
+        "Analytical Skills",
+        "Data Pipelines"
+      ],
+      "preferred_skills": [
+        "PostgreSQL",
+        "MySQL",
+        "BigQuery",
+        "NumPy",
+        "Problem Solving",
+        "Communication",
+        "ETL"
+      ],
+      "experience_levels": [
+        "Entry",
+        "Mid-Level"
+      ],
+      "learning_priority_order": [
+        "SQL",
+        "Excel",
+        "Tableau",
+        "Python",
+        "Pandas",
+        "Power BI",
+        "Data Warehousing"
+      ]
+    },
+    {
+      "id": "fullstack_developer",
+      "title": "Full Stack Developer",
+      "category": "Software Engineering",
+      "description": "Develops end-to-end web applications covering user interface components, server architecture, databases, and APIs.",
+      "required_skills": [
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Node.js",
+        "HTML",
+        "CSS",
+        "REST API",
+        "PostgreSQL",
+        "Git"
+      ],
+      "preferred_skills": [
+        "Next.js",
+        "Tailwind CSS",
+        "FastAPI",
+        "Docker",
+        "MongoDB",
+        "Redis",
+        "CI/CD",
+        "GraphQL",
+        "System Design"
+      ],
+      "experience_levels": [
+        "Entry",
+        "Mid-Level",
+        "Senior"
+      ],
+      "learning_priority_order": [
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Node.js",
+        "REST API",
+        "PostgreSQL",
+        "Docker",
+        "Next.js"
+      ]
+    },
+    {
+      "id": "frontend_developer",
+      "title": "Frontend Developer",
+      "category": "Software Engineering",
+      "description": "Constructs responsive, high-performance, and visually engaging web interfaces with modern JavaScript frameworks.",
+      "required_skills": [
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "HTML",
+        "CSS",
+        "Tailwind CSS",
+        "Git",
+        "Vite"
+      ],
+      "preferred_skills": [
+        "Next.js",
+        "Redux",
+        "Vue.js",
+        "REST API",
+        "Unit Testing",
+        "Jest",
+        "Webpack",
+        "Responsive Design"
+      ],
+      "experience_levels": [
+        "Entry",
+        "Mid-Level",
+        "Senior"
+      ],
+      "learning_priority_order": [
+        "HTML/CSS",
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Tailwind CSS",
+        "Next.js",
+        "Jest"
+      ]
+    },
+    {
+      "id": "backend_developer",
+      "title": "Backend Developer",
+      "category": "Software Engineering",
+      "description": "Architects reliable backend services, database schemas, secure authentication flows, and high-throughput APIs.",
+      "required_skills": [
+        "Python",
+        "Node.js",
+        "FastAPI",
+        "PostgreSQL",
+        "REST API",
+        "Docker",
+        "Git",
+        "SQL"
+      ],
+      "preferred_skills": [
+        "Redis",
+        "MongoDB",
+        "Microservices",
+        "Kubernetes",
+        "CI/CD",
+        "System Design",
+        "GraphQL",
+        "Linux",
+        "AWS"
+      ],
+      "experience_levels": [
+        "Entry",
+        "Mid-Level",
+        "Senior"
+      ],
+      "learning_priority_order": [
+        "Python",
+        "FastAPI",
+        "SQL",
+        "PostgreSQL",
+        "Docker",
+        "Redis",
+        "Microservices",
+        "System Design"
+      ]
+    },
+    {
+      "id": "cloud_devops_engineer",
+      "title": "Cloud & DevOps Engineer",
+      "category": "Infrastructure",
+      "description": "Automates cloud infrastructure, manages CI/CD delivery pipelines, and monitors cluster reliability and security.",
+      "required_skills": [
+        "AWS",
+        "Docker",
+        "Kubernetes",
+        "CI/CD",
+        "Linux",
+        "Git",
+        "GitHub Actions",
+        "Terraform",
+        "Bash"
+      ],
+      "preferred_skills": [
+        "Python",
+        "GCP",
+        "Azure",
+        "Ansible",
+        "Nginx",
+        "Prometheus",
+        "Microservices",
+        "Serverless"
+      ],
+      "experience_levels": [
+        "Mid-Level",
+        "Senior",
+        "Lead"
+      ],
+      "learning_priority_order": [
+        "Linux",
+        "Bash",
+        "Git",
+        "Docker",
+        "CI/CD",
+        "AWS",
+        "Terraform",
+        "Kubernetes"
+      ]
+    }
+  ]
+}

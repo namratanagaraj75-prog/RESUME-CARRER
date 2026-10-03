@@ -1,0 +1,28 @@
+Priya Patel
+Austin, TX | priya.patel@email.com | (555) 345-6789 | linkedin.com/in/priyapatel-tech | github.com/priyapatel
+
+OBJECTIVE
+Motivated Computer Science graduate seeking an Entry-Level Machine Learning or Data Science role. Strong foundation in Python, data structures, and statistical analysis with academic project experience in scikit-learn and exploratory data analysis.
+
+EDUCATION
+Bachelor of Science in Computer Science
+University of Texas at Austin | Graduated May 2024
+GPA: 3.8/4.0
+
+TECHNICAL SKILLS
+• Programming Languages: Python, C++, SQL, HTML, CSS
+• Libraries & Tools: Pandas, NumPy, scikit-learn, Git, Jupyter, Matplotlib
+• Core Concepts: Object-Oriented Programming, Data Structures, Algorithms, Linear Algebra, Statistics
+• Soft Skills: Problem Solving, Analytical Skills, Communication, Teamwork
+
+ACADEMIC PROJECTS
+• Housing Price Predictor (Python, scikit-learn, Pandas):
+  Built linear regression and decision tree models to predict home prices using Ames dataset. Handled missing data, categorical encoding, and evaluated RMSE.
+• Student Performance Analysis (Python, Pandas, Matplotlib):
+  Cleaned and visualized academic datasets to uncover correlations between study habits and exam results.
+• Portfolio Website (HTML, CSS, JavaScript):
+  Designed personal responsive website hosted on GitHub Pages.
+
+EXPERIENCE
+Undergraduate Teaching Assistant | UT Austin | 2023 – 2024
+• Assisted 80+ students in Intro to Programming with Python; conducted lab sessions and graded assignments.

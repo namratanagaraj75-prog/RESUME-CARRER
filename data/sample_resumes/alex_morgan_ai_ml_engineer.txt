@@ -1,0 +1,37 @@
+Alex Morgan
+San Francisco, CA | alex.morgan@email.com | (555) 234-5678 | linkedin.com/in/alexmorgan-ai | github.com/alexmorgan
+
+PROFESSIONAL SUMMARY
+Results-driven Machine Learning Engineer with 3+ years of experience designing, training, and deploying production AI systems. Specializes in PyTorch, scikit-learn, LangChain, and RAG architectures. Experienced in building microservices with FastAPI and deploying containerized pipelines with Docker on AWS.
+
+EDUCATION
+Master of Science in Computer Science (Machine Learning Specialization)
+Stanford University | 2020 – 2022
+Bachelor of Science in Computer Science
+University of California, Berkeley | 2016 – 2020
+
+TECHNICAL SKILLS
+• Programming Languages: Python, SQL, C++, Bash
+• Machine Learning & AI: Machine Learning, Deep Learning, scikit-learn, PyTorch, TensorFlow, Pandas, NumPy, NLP, LLM, LangChain, LangGraph, RAG, Hugging Face, Transformers, Vector Databases, ChromaDB, FAISS
+• Cloud & DevOps: Docker, AWS, Git, GitHub Actions, CI/CD, Linux
+• Web & APIs: FastAPI, REST API, Flask
+• Databases: PostgreSQL, Redis, MongoDB
+
+PROFESSIONAL EXPERIENCE
+Machine Learning Engineer | Apex AI Technologies | 2022 – Present
+• Architected and deployed an enterprise Retrieval-Augmented Generation (RAG) pipeline using LangChain, ChromaDB, and OpenAI LLMs, cutting customer support response time by 42%.
+• Built feature engineering pipelines and trained XGBoost and PyTorch neural network classifiers on tabular and text datasets exceeding 5M records with scikit-learn and Pandas.
+• Packaged models as high-throughput REST APIs using FastAPI, containerized with Docker, and automated deployment via GitHub Actions on AWS ECS.
+• Implemented TF-IDF and Cosine Similarity baseline search modules for semantic document retrieval prior to dense embedding vector ranking.
+
+AI Research Intern | Cognition Labs | Summer 2021
+• Researched few-shot prompt optimization for Large Language Models and fine-tuned Transformer models with PyTorch and Hugging Face.
+• Developed data cleaning pipelines with NumPy, Pandas, and SciPy for multi-modal dataset analysis.
+
+PROJECTS
+• MedAssist RAG Agent: Multi-agent clinical document assistant using LangGraph, Python, FastAPI, and vector search over PubMed abstracts.
+• Real-time Fraud Detection Engine: Stream processing ML service utilizing scikit-learn, Redis, and Docker for real-time anomaly detection.
+
+CERTIFICATIONS
+• AWS Certified Machine Learning - Specialty (2023)
+• Deep Learning Specialization - DeepLearning.AI (Coursera)

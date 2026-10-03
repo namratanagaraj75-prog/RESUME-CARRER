@@ -1,0 +1,31 @@
+Sarah Chen
+Seattle, WA | sarah.chen@devmail.com | (555) 789-0123 | github.com/sarahchen | sarahchen.dev
+
+SUMMARY
+Full Stack Developer with 4 years of experience crafting scalable web applications, RESTful microservices, and interactive UI systems. Proficient in TypeScript, React, Node.js, Next.js, and PostgreSQL. Passionate about clean code, component architecture, and cloud deployment.
+
+TECHNICAL SKILLS
+• Languages: JavaScript, TypeScript, Python, HTML, CSS, SQL
+• Frontend: React, Next.js, Tailwind CSS, Redux, Vite, HTML5, CSS3
+• Backend: Node.js, Express, FastAPI, REST API, GraphQL
+• Databases: PostgreSQL, MongoDB, Redis
+• Cloud & Tools: Docker, Git, GitHub Actions, CI/CD, AWS, Postman, Jest, Unit Testing
+
+EXPERIENCE
+Senior Frontend / Full Stack Engineer | CloudScale Inc. | 2022 – Present
+• Built a customer-facing enterprise portal using React 18, TypeScript, and Tailwind CSS serving 150k monthly active users.
+• Developed backend services in Node.js and Express with PostgreSQL and Redis caching, achieving 99.9% uptime.
+• Migrated legacy monolithic architecture to Next.js with server-side rendering, improving Core Web Vitals and SEO rankings by 35%.
+• Implemented automated CI/CD testing suites using Jest and GitHub Actions.
+
+Software Developer | WebCraft Studios | 2020 – 2022
+• Developed modern responsive web applications using React, JavaScript, and Node.js.
+• Created REST APIs and integrated Stripe payment processing and third-party webhooks.
+
+EDUCATION
+Bachelor of Science in Software Engineering
+University of Washington | 2016 – 2020
+
+PROJECTS
+• DevPulse Analytics: Real-time dashboard for developer metrics built with React, Vite, Tailwind CSS, Node.js, and PostgreSQL.
+• TaskMatrix: Collaborative project management tool featuring real-time synchronization, WebSockets, and Redis.

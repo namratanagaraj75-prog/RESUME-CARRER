@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+body {
+  background-color: #f6f8fc;
+  color: #142849;
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f4f8;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-panel-hover:hover {
+  border-color: rgba(59, 130, 246, 0.35);
+  box-shadow: 0 8px 30px rgba(30, 58, 138, 0.2);
+}
+
+.glow-brand {
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.25);
+}
+
+.glow-accent {
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+}
+
+.toolbar-button {
+  @apply inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-2.5 py-2 text-[10px] font-medium text-slate-600 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700 disabled:cursor-not-allowed disabled:opacity-40;
+}
+
+.icon-button {
+  @apply inline-flex h-8 w-8 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-600 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700 disabled:cursor-not-allowed disabled:opacity-40;
+}
+
+.app-sidebar-nav,
+.app-sidebar-footer {
+  overscroll-behavior: contain;
+  scrollbar-color: #334761 #101c31;
+  scrollbar-width: thin;
+}
+
+@media (max-height: 680px) and (min-width: 1024px) {
+  .app-sidebar-footer { max-height: 35vh; padding-top: 8px; padding-bottom: 8px; }
+  .app-sidebar-assistant { padding: 10px 12px; }
+  .app-sidebar-assistant-description,
+  .app-sidebar-meta { display: none !important; }
+  .app-sidebar-assistant > div:first-child { width: 26px; height: 26px; margin-bottom: 5px; }
+  .app-sidebar-assistant > button { min-height: 29px; margin-top: 5px; padding-top: 6px; padding-bottom: 6px; }
+}
+
+@media (max-height: 500px) and (min-width: 1024px) {
+  .app-sidebar-footer { max-height: 30vh; }
+  .app-sidebar-assistant { display: grid; grid-template-columns: 25px minmax(0, 1fr); align-items: center; gap: 4px 8px; padding: 8px; }
+  .app-sidebar-assistant > div:first-child { margin: 0; }
+  .app-sidebar-assistant > h2 { display: none; }
+  .app-sidebar-assistant > button { grid-column: 1 / -1; margin-top: 0; }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(8px) scale(0.995); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}

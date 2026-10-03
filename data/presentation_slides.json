@@ -1,0 +1,488 @@
+{
+  "slides": [
+    {
+      "slide_number": 1,
+      "title": "AI-Powered Resume Analysis & Career Guidance System",
+      "subtitle": "A Full-Stack Resume Analysis and Career Guidance Capstone",
+      "category": "Title",
+      "key_points": [
+        "Compares resume text with curated role templates using TF-IDF and cosine similarity.",
+        "Uses a seven-node LangGraph workflow to organize analysis and guidance.",
+        "Combines a React interface with a FastAPI service and local data files.",
+        "Provides rule-based guidance when OpenAI is not configured; OpenAI can be enabled optionally."
+      ],
+      "metrics": {
+        "Role Templates": "8 Curated Roles",
+        "Workflow": "7 LangGraph Nodes",
+        "Inputs": "PDF or Resume Text"
+      }
+    },
+    {
+      "slide_number": 2,
+      "title": "Abstract",
+      "subtitle": "From Resume Text to Explainable Role Comparison and Skill Guidance",
+      "category": "Executive Summary",
+      "key_points": [
+        "Accepts a PDF resume or user-provided resume text.",
+        "Detects terms from a curated skill taxonomy and compares text with role templates.",
+        "Shows lexical similarity scores, matched skills, missing skills, and coverage.",
+        "Builds a role-focused roadmap; optional AI guidance uses the available local or OpenAI provider."
+      ],
+      "metrics": {
+        "Scoring": "TF-IDF + Cosine Similarity",
+        "Role Templates": "8",
+        "Feature Limit": "Up to 2,500 Terms"
+      }
+    },
+    {
+      "slide_number": 3,
+      "title": "Problem Statement",
+      "subtitle": "A Practical Need for Clear, Role-Specific Resume Feedback",
+      "category": "Motivation",
+      "key_points": [
+        "A resume score is hard to act on without knowing which role definition was used.",
+        "Keyword coverage can reveal gaps, but it does not establish experience or proficiency.",
+        "Similarity scores need context and should not be treated as hiring probabilities.",
+        "This project connects a transparent text comparison to role-specific skill coverage and learning suggestions."
+      ],
+      "metrics": {
+        "Focus": "Explainable Comparison",
+        "Input": "Resume Text",
+        "Output": "Roles, Skills, Roadmap"
+      }
+    },
+    {
+      "slide_number": 4,
+      "title": "Existing Systems vs. Proposed System",
+      "subtitle": "How the Project Combines Text Matching with Actionable Feedback",
+      "category": "Literature Review",
+      "key_points": [
+        "Keyword matching makes terms visible but depends on the terms and rules supplied.",
+        "Generated advice can vary and should be reviewed for accuracy.",
+        "This application uses curated role templates for reproducible lexical scores.",
+        "Skill-gap views and guidance add context to the comparison while keeping score generation separate."
+      ],
+      "metrics": {
+        "Score Method": "TF-IDF Cosine Similarity",
+        "Guidance": "Local Rules or OpenAI",
+        "Templates": "Curated and Editable"
+      }
+    },
+    {
+      "slide_number": 5,
+      "title": "Proposed Solution",
+      "subtitle": "A Small, Inspectable Pipeline from Resume Input to Guidance",
+      "category": "System Design",
+      "key_points": [
+        "Scikit-learn vectorizes the resume and eight bundled role templates.",
+        "A seven-node LangGraph workflow runs preprocessing, skill detection, matching, gap analysis, context preparation, guidance, and roadmap generation.",
+        "When OpenAI is not configured, guidance uses the local rule-based provider; OpenAI can be configured optionally.",
+        "The interface includes analysis views, a roadmap, a source explorer, and PDF reports."
+      ],
+      "metrics": {
+        "Matching": "Scikit-learn",
+        "Orchestration": "LangGraph",
+        "Interface": "React + TypeScript"
+      }
+    },
+    {
+      "slide_number": 6,
+      "title": "Project Objectives & Scope",
+      "subtitle": "Defined Project Scope and Included Deliverables",
+      "category": "Scope",
+      "key_points": [
+        "Accept PDF uploads and resume text, then extract or normalize the text.",
+        "Detect skills from a seven-category curated taxonomy.",
+        "Compare the resume against eight bundled career-role templates.",
+        "Show required and preferred skill gaps, a learning roadmap, and downloadable reports.",
+        "Expose workflow trace details and selected project source through the interface."
+      ],
+      "metrics": {
+        "Taxonomy": "7 Categories",
+        "Role Templates": "8",
+        "Workflow Nodes": "7"
+      }
+    },
+    {
+      "slide_number": 7,
+      "title": "High-Level System Architecture",
+      "subtitle": "Application Layers and Data Flow",
+      "category": "Architecture",
+      "key_points": [
+        "React, Vite, and TypeScript render the browser interface.",
+        "FastAPI validates requests and exposes analysis, upload, settings, report, and code-explorer routes.",
+        "Python modules handle text preprocessing, skill extraction, vector matching, and gap analysis.",
+        "LangGraph coordinates workflow nodes; guidance is provided by local rules or optional OpenAI integration."
+      ],
+      "metrics": {
+        "Frontend": "React + Vite + TypeScript",
+        "Backend": "FastAPI + Python",
+        "Role Data": "Bundled JSON Templates"
+      }
+    },
+    {
+      "slide_number": 8,
+      "title": "End-to-End Workflow Pipeline",
+      "subtitle": "Resume Processing and the Seven-Node Analysis Workflow",
+      "category": "Workflow",
+      "key_points": [
+        "Choose a PDF upload or provide resume text.",
+        "Extract or normalize text, then detect configured skill terms.",
+        "Fit TF-IDF vectors for the resume and bundled role templates; rank with cosine similarity.",
+        "Compare detected skills with the selected role?s required and preferred skills.",
+        "Prepare context, generate guidance, and create a roadmap.",
+        "Generate downloadable reports through a separate report endpoint."
+      ],
+      "metrics": {
+        "Workflow Nodes": "7",
+        "Trace": "Per-Node Status and Duration",
+        "Scoring": "Lexical Similarity"
+      }
+    },
+    {
+      "slide_number": 9,
+      "title": "Technology Stack",
+      "subtitle": "Libraries and Services Used in the Project",
+      "category": "Tech Stack",
+      "key_points": [
+        "Frontend: React, Vite, TypeScript, Tailwind CSS, and Lucide icons.",
+        "API: Python, FastAPI, Pydantic, and Uvicorn.",
+        "Matching: scikit-learn TF-IDF and cosine similarity, with NumPy.",
+        "Workflow: LangGraph; document extraction: pypdf; PDF reports: ReportLab.",
+        "Guidance providers: local rule-based responses or optional OpenAI API."
+      ],
+      "metrics": {
+        "Frontend": "React + Vite",
+        "API": "FastAPI",
+        "Guidance": "Local or OpenAI"
+      }
+    },
+    {
+      "slide_number": 10,
+      "title": "Modular System Components",
+      "subtitle": "Source Modules and Their Responsibilities",
+      "category": "Modularity",
+      "key_points": [
+        "ml/: preprocessing, taxonomy matching, TF-IDF career matching, and skill-gap analysis.",
+        "agents/: typed workflow state, node handlers, and LangGraph construction.",
+        "llm/: provider selection, local rule-based guidance, and OpenAI integration.",
+        "data/: skill taxonomy, career-role templates, sample resumes, and presentation content.",
+        "reports/ and backend/: PDF generation and REST API routes.",
+        "tests/: backend unit and API regression coverage."
+      ],
+      "metrics": {
+        "Organization": "Feature-Based Modules",
+        "Test Suite": "Pytest",
+        "Data": "Local JSON Templates"
+      }
+    },
+    {
+      "slide_number": 11,
+      "title": "Resume Processing & Text Extraction",
+      "subtitle": "Text Extraction, Normalization, and Contact Parsing",
+      "category": "Data Processing",
+      "key_points": [
+        "PDF uploads are read with pypdf; text input can also be analyzed directly.",
+        "Normalization handles irregular whitespace and line breaks before analysis.",
+        "Contact fields such as email and phone are detected with patterns when present.",
+        "Section parsing recognizes common resume headings; document layouts can affect extraction order."
+      ],
+      "metrics": {
+        "PDF Extraction": "pypdf",
+        "Text Input": "Supported",
+        "Parsing": "Rule-Based"
+      }
+    },
+    {
+      "slide_number": 12,
+      "title": "Skill Taxonomy & Extraction Engine",
+      "subtitle": "Configured Skill Terms and Boundary-Aware Detection",
+      "category": "NLP & Taxonomy",
+      "key_points": [
+        "The bundled taxonomy contains seven categories and 147 configured term entries, including aliases.",
+        "Categories cover languages, frameworks, ML/AI, data, cloud/DevOps, developer tools, and soft skills.",
+        "Boundary-aware matching helps avoid short terms matching inside unrelated words.",
+        "Detected terms are used in role comparisons and skill-gap views; detection does not verify proficiency."
+      ],
+      "metrics": {
+        "Categories": "7",
+        "Configured Entries": "147 incl. aliases",
+        "Normalization": "Aliases Supported"
+      }
+    },
+    {
+      "slide_number": 13,
+      "title": "Machine Learning: TF-IDF Theory",
+      "subtitle": "How TF-IDF Weights Terms for Resume-to-Role Comparison",
+      "category": "Machine Learning",
+      "key_points": [
+        "The vectorizer fits on the resume and the bundled role-template texts together.",
+        "Scikit-learn uses term frequency and smoothed inverse document frequency to weight terms.",
+        "The role corpus repeats required skills to give them additional representation in its text.",
+        "The result is a sparse lexical vector; it does not measure semantic understanding."
+      ],
+      "metrics": {
+        "N-grams": "Unigrams and Bigrams",
+        "Vocabulary Cap": "2,500 Features",
+        "Stop Words": "English"
+      }
+    },
+    {
+      "slide_number": 14,
+      "title": "Mathematical Model: Cosine Similarity",
+      "subtitle": "Cosine Similarity Measures Directional Alignment in the Fitted Vector Space",
+      "category": "Mathematical Model",
+      "key_points": [
+        "For resume vector A and role vector B, cosine similarity is (A ? B) / (||A|| ? ||B||).",
+        "With nonnegative TF-IDF vectors, the score falls between 0 and 1.",
+        "The displayed percentage is the cosine score multiplied by 100 and rounded.",
+        "This is a text-similarity measure over the current templates, not a probability of employment."
+      ],
+      "metrics": {
+        "Score Range": "0 to 1",
+        "Display": "Cosine ? 100",
+        "Angle": "Derived in Degrees"
+      }
+    },
+    {
+      "slide_number": 15,
+      "title": "Empirical Matching Results & Ranking",
+      "subtitle": "Role Order and Vector Details Depend on the Resume Input",
+      "category": "ML Outputs",
+      "key_points": [
+        "The application scores all eight bundled role templates for each analysis.",
+        "Results are sorted by cosine similarity for the current resume and fitted vocabulary.",
+        "The interface shows up to 15 high-weight resume terms.",
+        "Where available, vector details include the dot product, vector norms, and derived angle."
+      ],
+      "metrics": {
+        "Roles Scored": "8",
+        "Ranking": "Descending Similarity",
+        "Term List": "Up to 15 Terms"
+      }
+    },
+    {
+      "slide_number": 16,
+      "title": "Skill Gap Analysis & Priority Weighting",
+      "subtitle": "Required and Preferred Gaps Inform the Suggested Learning Order",
+      "category": "Skill Gap",
+      "key_points": [
+        "The analyzer separates matched and missing required skills from preferred skills.",
+        "Missing required skills are listed before preferred skills; the role template supplies a learning-priority order.",
+        "A small static prerequisite map provides hints for selected skills.",
+        "Coverage measures configured skill mentions and is not a proficiency assessment."
+      ],
+      "metrics": {
+        "Gap Types": "Required and Preferred",
+        "Coverage": "Template Skill Coverage",
+        "Prerequisites": "Static Hints"
+      }
+    },
+    {
+      "slide_number": 17,
+      "title": "AI Agent Architecture: LangGraph Workflow",
+      "subtitle": "A Sequential LangGraph StateGraph Coordinates the Analysis",
+      "category": "AI Agent",
+      "key_points": [
+        "Seven nodes handle preprocessing, extraction, matching, gap analysis, context, guidance, and roadmap generation.",
+        "Each node reads the workflow state and returns updates for later nodes.",
+        "The in-app trace reports node status and duration for the current run.",
+        "The graph organizes processing; it does not independently validate resume claims."
+      ],
+      "metrics": {
+        "Graph": "LangGraph StateGraph",
+        "Nodes": "7 Sequential",
+        "Trace": "Run Status and Duration"
+      }
+    },
+    {
+      "slide_number": 18,
+      "title": "Agent State Transitions & Telemetry",
+      "subtitle": "Node Names and Responsibilities in One Workflow Run",
+      "category": "Telemetry",
+      "key_points": [
+        "node_parse_preprocess and node_extract_skills prepare normalized text and detected terms.",
+        "node_career_match and node_skill_gap rank roles and compare the chosen target role.",
+        "node_prepare_context assembles analysis details for the guidance stage.",
+        "node_career_guidance and node_roadmap_generation produce suggestions and milestones.",
+        "Displayed durations are measured at runtime and vary by machine and provider."
+      ],
+      "metrics": {
+        "Stages": "7",
+        "Timing": "Runtime Measurements",
+        "Guidance": "Provider-Dependent"
+      }
+    },
+    {
+      "slide_number": 19,
+      "title": "LLM Integration: Dual Engine Architecture",
+      "subtitle": "Optional OpenAI Guidance with a Local Rule-Based Provider",
+      "category": "LLM Architecture",
+      "key_points": [
+        "The project supports OpenAI when configured and reachable.",
+        "A local rule-based provider is available without an external LLM key.",
+        "The guidance stage receives role and skill-gap context from the analysis.",
+        "Generated guidance may be incomplete or mistaken; users should review it before acting."
+      ],
+      "metrics": {
+        "Providers": "OpenAI or Local",
+        "API Key": "Optional",
+        "Score Calculation": "Separate from LLM"
+      }
+    },
+    {
+      "slide_number": 20,
+      "title": "Unified AI / ML / Agent Synergy",
+      "subtitle": "Distinct Roles for Matching, Workflow Coordination, and Guidance",
+      "category": "Integration",
+      "key_points": [
+        "TF-IDF and cosine similarity produce the numeric role ranking.",
+        "LangGraph coordinates the sequence of analysis steps.",
+        "Guidance converts structured results into suggestions and example resume edits.",
+        "The score remains a lexical comparison even when an external LLM is enabled."
+      ],
+      "metrics": {
+        "Matching": "Scikit-learn",
+        "Orchestration": "LangGraph",
+        "Advice": "Local or OpenAI"
+      }
+    },
+    {
+      "slide_number": 21,
+      "title": "Interactive Dashboard UI Design",
+      "subtitle": "Dashboard Views for Analysis Status and Role Results",
+      "category": "UI Design",
+      "key_points": [
+        "The dashboard summarizes the active resume, top role match, skill coverage, and detected terms.",
+        "Role comparisons use score bars; roadmap progress is recorded in the browser.",
+        "Workflow status reflects returned analysis stages.",
+        "The current interface uses a dark theme and responsive layouts."
+      ],
+      "metrics": {
+        "Theme": "Dark",
+        "Role View": "Similarity Bars",
+        "Roadmap Progress": "Browser Storage"
+      }
+    },
+    {
+      "slide_number": 22,
+      "title": "System Outputs & Analytical Visualizations",
+      "subtitle": "Analysis Views Expose Role Scores, Skill Gaps, and Vector Terms",
+      "category": "Visualizations",
+      "key_points": [
+        "Role cards compare cosine percentages across the eight templates.",
+        "Skill badges separate detected, missing required, and missing preferred terms.",
+        "A weighted-term list shows resume terms that contribute to the fitted vectors.",
+        "The math view reports cosine inputs such as dot product and vector norms."
+      ],
+      "metrics": {
+        "Role Comparison": "8 Templates",
+        "Term View": "Weighted Terms",
+        "Math": "Vector Breakdown"
+      }
+    },
+    {
+      "slide_number": 23,
+      "title": "In-App Developer Code Explorer & AI",
+      "subtitle": "Browse Project Source and Request File-Aware Explanations",
+      "category": "Code Explorer",
+      "key_points": [
+        "The source explorer lists selected project files through a backend endpoint.",
+        "The viewer provides basic syntax coloring and supports selecting code.",
+        "Users can request an explanation of a file or a selected excerpt.",
+        "Source access is restricted to approved project paths; hidden and excluded paths are filtered."
+      ],
+      "metrics": {
+        "Explorer": "Selected Project Files",
+        "Explanation": "File or Selection",
+        "Path Access": "Restricted"
+      }
+    },
+    {
+      "slide_number": 24,
+      "title": "Case Study: Candidate Evaluation",
+      "subtitle": "Example Run Using the Bundled Alex Morgan Resume",
+      "category": "Case Study",
+      "key_points": [
+        "The bundled sample produced 45 detected taxonomy matches in a recorded run.",
+        "The leading cosine scores were AI Engineer 35.6%, Machine Learning Engineer 35.0%, and Data Scientist 22.2%.",
+        "For AI Engineer, required-skill coverage was 100% and overall template coverage was 94.7% in that run.",
+        "These values describe one sample and the current role templates; they are not hiring odds or career outcomes."
+      ],
+      "metrics": {
+        "Sample": "Alex Morgan .txt",
+        "Top Score": "AI Engineer ? 35.6%",
+        "Target Coverage": "100% Required"
+      }
+    },
+    {
+      "slide_number": 25,
+      "title": "Advantages of the System",
+      "subtitle": "Strengths and Appropriate Interpretation",
+      "category": "Advantages",
+      "key_points": [
+        "Numeric matching is reproducible for the same input, templates, and vectorizer settings.",
+        "Workflow traces make the configured analysis stages visible.",
+        "Skill gaps connect the comparison to a role-specific learning roadmap.",
+        "Generated advice can be inaccurate and should be checked; detected terms do not prove skill level."
+      ],
+      "metrics": {
+        "Scoring": "Deterministic Text Method",
+        "Workflow": "Traceable Stages",
+        "Advice": "Review Before Use"
+      }
+    },
+    {
+      "slide_number": 26,
+      "title": "Limitations & Technical Boundaries",
+      "subtitle": "Known Limits of the Current Implementation",
+      "category": "Limitations",
+      "key_points": [
+        "TF-IDF captures configured words and n-grams, not deep semantic equivalence.",
+        "Results depend on the bundled role templates and skill taxonomy.",
+        "PDF text extraction can lose ordering in complex or multi-column layouts.",
+        "OpenAI guidance requires a working API configuration; local guidance is rule-based.",
+        "Scores and coverage do not predict interviews, offers, or salary."
+      ],
+      "metrics": {
+        "Model": "Lexical TF-IDF",
+        "Data": "Bundled Templates",
+        "PDF Layout": "May Affect Extraction"
+      }
+    },
+    {
+      "slide_number": 27,
+      "title": "Future Scope & Enhancements",
+      "subtitle": "Possible Extensions Beyond the Current Project Scope",
+      "category": "Future Scope",
+      "key_points": [
+        "Add semantic embeddings alongside the current lexical matching approach.",
+        "Connect to a maintained job-data source to refresh role requirements.",
+        "Evaluate matching against labeled resumes and role descriptions.",
+        "Explore resume export and additional user-controlled workflow features."
+      ],
+      "metrics": {
+        "Research": "Lexical + Semantic",
+        "Data": "Maintained Job Source",
+        "Evaluation": "Labeled Dataset"
+      }
+    },
+    {
+      "slide_number": 28,
+      "title": "Conclusion & Summary",
+      "subtitle": "Project Summary",
+      "category": "Conclusion",
+      "key_points": [
+        "The application combines resume text processing, taxonomy-based skill detection, and role-template matching.",
+        "A LangGraph workflow coordinates skill gaps, guidance, and roadmap generation.",
+        "React and FastAPI provide the user interface and API; reports and source exploration are included.",
+        "The system is a demonstrable project prototype; scores are template-relative and advice should be reviewed."
+      ],
+      "metrics": {
+        "Matching": "TF-IDF + Cosine",
+        "Workflow": "7 Nodes",
+        "Status": "Implemented Capstone Application"
+      }
+    }
+  ]
+}

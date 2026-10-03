@@ -1,0 +1,25 @@
+{
+  "categories": {
+    "programming_languages": [
+      "Python", "JavaScript", "TypeScript", "Java", "C++", "C#", "C", "Go", "Rust", "Ruby", "PHP", "Swift", "Kotlin", "Scala", "R", "SQL", "HTML", "CSS", "Bash", "Shell", "Dart"
+    ],
+    "frameworks_and_libraries": [
+      "React", "Next.js", "Vue.js", "Angular", "Svelte", "Node.js", "Express", "FastAPI", "Flask", "Django", "Spring Boot", "ASP.NET", "Ruby on Rails", "Laravel", "Tailwind CSS", "Bootstrap", "Redux", "GraphQL", "REST API", "NestJS"
+    ],
+    "machine_learning_and_ai": [
+      "Machine Learning", "Deep Learning", "Artificial Intelligence", "Natural Language Processing", "NLP", "Computer Vision", "TensorFlow", "PyTorch", "Keras", "scikit-learn", "Pandas", "NumPy", "SciPy", "OpenCV", "Hugging Face", "Transformers", "LLM", "Large Language Models", "LangChain", "LangGraph", "RAG", "Retrieval-Augmented Generation", "Vector Databases", "ChromaDB", "FAISS", "Pinecone", "TF-IDF", "Cosine Similarity", "BERT", "GPT", "XGBoost", "LightGBM", "CatBoost", "Data Mining", "Feature Engineering"
+    ],
+    "data_and_databases": [
+      "PostgreSQL", "MySQL", "MongoDB", "Redis", "SQLite", "Oracle", "Microsoft SQL Server", "Cassandra", "Elasticsearch", "Neo4j", "DynamoDB", "Snowflake", "BigQuery", "Apache Spark", "Hadoop", "Kafka", "Data Warehousing", "ETL", "Data Pipelines", "Tableau", "Power BI"
+    ],
+    "cloud_and_devops": [
+      "AWS", "Amazon Web Services", "Azure", "Google Cloud", "GCP", "Docker", "Kubernetes", "CI/CD", "GitHub Actions", "Jenkins", "GitLab CI", "Terraform", "Ansible", "Linux", "Nginx", "Apache", "Serverless", "Lambda", "Microservices"
+    ],
+    "developer_tools_and_practices": [
+      "Git", "GitHub", "GitLab", "Bitbucket", "Jira", "Postman", "Swagger", "Vite", "Webpack", "npm", "yarn", "Agile", "Scrum", "Test Driven Development", "TDD", "Unit Testing", "PyTest", "Jest", "System Design", "Object-Oriented Programming", "OOP"
+    ],
+    "soft_skills": [
+      "Problem Solving", "Critical Thinking", "Team Leadership", "Communication", "Collaboration", "Project Management", "Time Management", "Adaptability", "Analytical Skills", "Mentorship"
+    ]
+  }
+}
